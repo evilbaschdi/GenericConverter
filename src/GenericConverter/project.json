@@ -1,11 +1,11 @@
-﻿{
+{
   "version": "1.0.0-*",
   "buildOptions": {
     "emitEntryPoint": true
   },
 
   "dependencies": {
-    "Microsoft.CrmSdk.CoreAssemblies": "8.1.0"
+    "Microsoft.CrmSdk.CoreAssemblies": "8.1.0.2"
   },
 
   "frameworks": {

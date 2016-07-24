@@ -66,7 +66,7 @@ namespace GenericConverter
             Type typeArgument = Type.GetType(typeName);
 
             Type genericClass = typeof(List<>);
-            // MakeGenericType is badly named
+
             Type constructedClass = genericClass.MakeGenericType(typeArgument);
 
             object created = Activator.CreateInstance(constructedClass);
