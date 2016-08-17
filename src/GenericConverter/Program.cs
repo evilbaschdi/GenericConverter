@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using GenericConverter.Internal;
-using Microsoft.Xrm.Sdk;
 
 namespace GenericConverter
 {
@@ -51,27 +49,15 @@ namespace GenericConverter
         {
             var input = "1";
 
-            var entity = new Entity();
-            entity.Attributes.Add("test", new decimal(5));
+            //var entity = new Entity();
+            //entity.Attributes.Add("test", new decimal(5));
 
-            var test = entity["test"];
+            //var test = entity["test"];
 
             var output = _convertFromString.Output(input, typeof(decimal));
 
             Console.WriteLine(output.GetType());
             Console.WriteLine(output);
-
-
-            string typeName = "System.String";
-            Type typeArgument = Type.GetType(typeName);
-
-            Type genericClass = typeof(List<>);
-
-            Type constructedClass = genericClass.MakeGenericType(typeArgument);
-
-            object created = Activator.CreateInstance(constructedClass);
-
-            Console.WriteLine(created.GetType());
         }
     }
 
