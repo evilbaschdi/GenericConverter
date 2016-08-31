@@ -7,6 +7,7 @@ namespace GenericConverter.Internal
         /// <summary>
         ///     Initializes a new instance of the <see cref="T:System.Object" /> class.
         /// </summary>
+        /// <exception cref="ArgumentNullException"><paramref name="convertFromString"/> is <see langword="null" />.</exception>
         public BoolFromString(IConvertFromString convertFromString)
             : base(convertFromString)
         {
