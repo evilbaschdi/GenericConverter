@@ -11,11 +11,7 @@ namespace GenericConverter
         /// <exception cref="ArgumentNullException"><paramref name="convertFromString" /> is <see langword="null" />.</exception>
         public Test(IConvertFromString convertFromString)
         {
-            if (convertFromString == null)
-            {
-                throw new ArgumentNullException(nameof(convertFromString));
-            }
-            _convertFromString = convertFromString;
+            _convertFromString = convertFromString ?? throw new ArgumentNullException(nameof(convertFromString));
         }
 
         public void Run()
