@@ -19,7 +19,7 @@ namespace GenericConverter.Internal
 
         public override bool AmIResponsible => OutputType.Name == "Guid";
 
-        public override object InnerOutput(string input)
+        protected override object InnerOutput(string input)
         {
             return input == null ? (object) null : Guid.ParseExact(input, "D");
         }

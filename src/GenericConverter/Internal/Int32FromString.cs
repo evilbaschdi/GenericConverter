@@ -19,7 +19,7 @@ namespace GenericConverter.Internal
 
         public override bool AmIResponsible => OutputType.Name == "Int32";
 
-        public override object InnerOutput(string input)
+        protected override object InnerOutput(string input)
         {
             return input == null ? (object) null : Convert.ToInt32(input);
         }

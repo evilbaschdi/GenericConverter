@@ -20,7 +20,7 @@ namespace GenericConverter.Internal
 
         public override bool AmIResponsible => OutputType.Name == "Money";
 
-        public override object InnerOutput(string input)
+        protected override object InnerOutput(string input)
         {
             return input == null ? null : new Money(Convert.ToDecimal(input));
         }

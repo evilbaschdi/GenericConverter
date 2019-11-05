@@ -7,7 +7,7 @@ namespace GenericConverter.Internal
         /// <summary>
         ///     Initializes a new instance of the <see cref="T:System.Object" /> class.
         /// </summary>
-        /// <exception cref="ArgumentNullException"><paramref name="convertFromString"/> is <see langword="null" />.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="convertFromString" /> is <see langword="null" />.</exception>
         public BoolFromString(IConvertFromString convertFromString)
             : base(convertFromString)
         {
@@ -19,7 +19,7 @@ namespace GenericConverter.Internal
 
         public override bool AmIResponsible => OutputType.Name == "Boolean";
 
-        public override object InnerOutput(string input)
+        protected override object InnerOutput(string input)
         {
             if (input == null)
             {
@@ -28,18 +28,21 @@ namespace GenericConverter.Internal
 
             var b = false;
 
+            // ReSharper disable once SwitchStatementMissingSomeCases
             switch (input.ToUpper())
             {
                 case "0":
                 case "F":
                 case "FALSE":
                 case "NO":
+                    // ReSharper disable once RedundantAssignment
                     b = false;
                     break;
                 case "1":
                 case "T":
                 case "TRUE":
                 case "YES":
+                    // ReSharper disable once RedundantAssignment
                     b = true;
                     break;
             }

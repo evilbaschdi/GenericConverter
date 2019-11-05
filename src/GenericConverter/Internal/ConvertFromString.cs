@@ -7,6 +7,8 @@ namespace GenericConverter.Internal
     /// </summary>
     public abstract class ConvertFromString : IConvertFromString
     {
+        protected Type OutputType;
+
         /// <summary>
         ///     Initializes a new instance of the <see cref="T:System.Object" /> class.
         /// </summary>
@@ -16,6 +18,7 @@ namespace GenericConverter.Internal
             {
                 //   throw new ArgumentNullException(nameof(convertFromString));
             }
+
             NextChain = convertFromString;
         }
 
@@ -23,20 +26,17 @@ namespace GenericConverter.Internal
 
         public abstract bool AmIResponsible { get; }
 
-        protected string Input;
-        protected Type OutputType;
-
         public object Output(string input, Type outputType)
         {
             if (input == null)
             {
                 return null;
             }
-            Input = input;
+
             OutputType = outputType;
             return AmIResponsible ? InnerOutput(input) : NextChain.Output(input, outputType);
         }
 
-        public abstract object InnerOutput(string input);
+        protected abstract object InnerOutput(string input);
     }
 }

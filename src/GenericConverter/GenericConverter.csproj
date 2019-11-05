@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net452;net46;net461;net462;net47;net471</TargetFrameworks>
-    <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
+    <TargetFrameworks>net452;net46;net461;net462;net47;net471;net472;net48</TargetFrameworks>
     <AssemblyName>GenericConverter</AssemblyName>
     <OutputType>Library</OutputType>
     <PackageId>GenericConverter</PackageId>
@@ -11,32 +10,12 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <ApplicationIcon />
     <StartupObject />
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
-  <ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net461' ">
     <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="8.2.0.2" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net47' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net471' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
+  <ItemGroup Condition=" '$(TargetFramework)' != 'net452' AND '$(TargetFramework)' != 'net46' AND '$(TargetFramework)' != 'net461' ">
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="*" />
   </ItemGroup>
 </Project>

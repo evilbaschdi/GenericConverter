@@ -16,7 +16,7 @@ namespace GenericConverter.Internal
 
         public override bool AmIResponsible => OutputType.Name == "String";
 
-        public override object InnerOutput(string input)
+        protected override object InnerOutput(string input)
         {
             return input;
         }

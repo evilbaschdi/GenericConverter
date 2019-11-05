@@ -1,14 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26127.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7EFED4E8-50D8-4A90-BD7E-47E01008EB91}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6BC5B0A9-ED64-4359-A382-6057EC32AAD0}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericConverter", "src\GenericConverter\GenericConverter.csproj", "{0389D29F-D484-44B9-A599-86516B91A8F8}"
 EndProject
@@ -28,5 +23,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0389D29F-D484-44B9-A599-86516B91A8F8} = {7EFED4E8-50D8-4A90-BD7E-47E01008EB91}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {011871C5-C1A1-46B4-8898-0AE26EA4942F}
 	EndGlobalSection
 EndGlobal
