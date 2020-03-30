@@ -1,7 +1,7 @@
 ﻿using System;
-using GenericConverter.Internal;
+using Microsoft.Xrm.Sdk.Metadata;
 
-namespace GenericConverter
+namespace GenericConverter.TestConsole
 {
     public class Test : ITest
     {
@@ -18,10 +18,10 @@ namespace GenericConverter
         {
             var input = "1";
 
-            //todo: null and emtpy string validation.
+            //todo: null and empty string validation.
             //todo: providing format
 
-            var output = _convertFromString.Output(input, typeof(decimal));
+            var output = _convertFromString.Output(input, AttributeTypeCode.Decimal);
 
             Console.WriteLine(output.GetType());
             Console.WriteLine(output);

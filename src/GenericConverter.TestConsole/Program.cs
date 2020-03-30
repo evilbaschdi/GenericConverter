@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GenericConverter
+namespace GenericConverter.TestConsole
 {
     public class Program
     {

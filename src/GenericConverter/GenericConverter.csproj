@@ -13,9 +13,9 @@
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net452' OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net461' ">
-    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="8.2.0.2" />
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.5" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' != 'net452' AND '$(TargetFramework)' != 'net46' AND '$(TargetFramework)' != 'net461' ">
-    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="*" />
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.24" />
   </ItemGroup>
 </Project>

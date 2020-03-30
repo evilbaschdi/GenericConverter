@@ -1,6 +1,7 @@
 using System;
+using Microsoft.Xrm.Sdk.Metadata;
 
-namespace GenericConverter.Internal
+namespace GenericConverter
 {
     public class DecimalFromString : ConvertFromString
     {
@@ -17,7 +18,7 @@ namespace GenericConverter.Internal
             }
         }
 
-        public override bool AmIResponsible => OutputType.Name == "Decimal";
+        public override bool AmIResponsible => OutputType != null && OutputType.Name == "Decimal" || OutputAttributeTypeCode.Equals(AttributeTypeCode.Decimal);
 
         protected override object InnerOutput(string input)
         {

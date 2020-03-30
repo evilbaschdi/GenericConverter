@@ -1,14 +1,15 @@
-using System;
+﻿using System;
+using Microsoft.Xrm.Sdk.Metadata;
 
-namespace GenericConverter.Internal
+namespace GenericConverter
 {
-    public class DoubleFromString : ConvertFromString
+    public class Int32FromString : ConvertFromString
     {
         /// <summary>
         ///     Initializes a new instance of the <see cref="T:System.Object" /> class.
         /// </summary>
         /// <exception cref="ArgumentNullException"><paramref name="convertFromString" /> is <see langword="null" />.</exception>
-        public DoubleFromString(IConvertFromString convertFromString)
+        public Int32FromString(IConvertFromString convertFromString)
             : base(convertFromString)
         {
             if (convertFromString == null)
@@ -17,11 +18,11 @@ namespace GenericConverter.Internal
             }
         }
 
-        public override bool AmIResponsible => OutputType.Name == "Double";
+        public override bool AmIResponsible => OutputType != null && OutputType.Name == "Int32" || OutputAttributeTypeCode.Equals(AttributeTypeCode.Integer);
 
         protected override object InnerOutput(string input)
         {
-            return input == null ? (object) null : Convert.ToDouble(input);
+            return input == null ? (object) null : Convert.ToInt32(input);
         }
     }
 }

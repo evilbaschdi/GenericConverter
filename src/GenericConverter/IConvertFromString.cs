@@ -1,16 +1,18 @@
 ﻿using System;
+using Microsoft.Xrm.Sdk.Metadata;
 
-namespace GenericConverter.Internal
+namespace GenericConverter
 {
     /// <summary>
     ///     Interface for convertFromString chain of responsibility.
     /// </summary>
     public interface IConvertFromString
     {
+        bool AmIResponsible { get; }
         IConvertFromString NextChain { get; }
 
-        bool AmIResponsible { get; }
-
         object Output(string input, Type outputType);
+
+        object Output(string input, AttributeTypeCode outputAttributeTypeCode);
     }
 }

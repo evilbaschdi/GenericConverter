@@ -1,15 +1,16 @@
 using System;
-using System.Globalization;
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Metadata;
 
-namespace GenericConverter.Internal
+namespace GenericConverter
 {
-    public class DateTimeFromString : ConvertFromString
+    public class MoneyFromString : ConvertFromString
     {
         /// <summary>
         ///     Initializes a new instance of the <see cref="T:System.Object" /> class.
         /// </summary>
         /// <exception cref="ArgumentNullException"><paramref name="convertFromString" /> is <see langword="null" />.</exception>
-        public DateTimeFromString(IConvertFromString convertFromString)
+        public MoneyFromString(IConvertFromString convertFromString)
             : base(convertFromString)
         {
             if (convertFromString == null)
@@ -18,11 +19,11 @@ namespace GenericConverter.Internal
             }
         }
 
-        public override bool AmIResponsible => OutputType.Name == "DateTime";
+        public override bool AmIResponsible => OutputType != null && OutputType.Name == "Money" || OutputAttributeTypeCode.Equals(AttributeTypeCode.Money);
 
         protected override object InnerOutput(string input)
         {
-            return input == null ? (object) null : DateTime.ParseExact(input, "yyyyMMddHHmmss", CultureInfo.InvariantCulture);
+            return input == null ? null : new Money(Convert.ToDecimal(input));
         }
     }
 }

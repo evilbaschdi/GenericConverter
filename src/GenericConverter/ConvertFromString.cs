@@ -1,12 +1,14 @@
 ﻿using System;
+using Microsoft.Xrm.Sdk.Metadata;
 
-namespace GenericConverter.Internal
+namespace GenericConverter
 {
     /// <summary>
     ///     Abstract class for convertFromString chain of responsibility.
     /// </summary>
     public abstract class ConvertFromString : IConvertFromString
     {
+        protected AttributeTypeCode OutputAttributeTypeCode;
         protected Type OutputType;
 
         /// <summary>
@@ -35,6 +37,17 @@ namespace GenericConverter.Internal
 
             OutputType = outputType;
             return AmIResponsible ? InnerOutput(input) : NextChain.Output(input, outputType);
+        }
+
+        public object Output(string input, AttributeTypeCode outAttributeTypeCode)
+        {
+            if (input == null)
+            {
+                return null;
+            }
+
+            OutputAttributeTypeCode = outAttributeTypeCode;
+            return AmIResponsible ? InnerOutput(input) : NextChain.Output(input, outAttributeTypeCode);
         }
 
         protected abstract object InnerOutput(string input);

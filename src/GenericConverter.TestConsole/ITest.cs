@@ -1,4 +1,4 @@
-﻿namespace GenericConverter
+﻿namespace GenericConverter.TestConsole
 {
     public interface ITest
     {

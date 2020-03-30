@@ -1,7 +1,8 @@
 using System;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Metadata;
 
-namespace GenericConverter.Internal
+namespace GenericConverter
 {
     public class OptionSetValueFromString : ConvertFromString
     {
@@ -18,7 +19,7 @@ namespace GenericConverter.Internal
             }
         }
 
-        public override bool AmIResponsible => OutputType.Name == "OptionSetValue";
+        public override bool AmIResponsible => OutputType != null && OutputType.Name == "OptionSetValue" || OutputAttributeTypeCode.Equals(AttributeTypeCode.Picklist);
 
         protected override object InnerOutput(string input)
         {

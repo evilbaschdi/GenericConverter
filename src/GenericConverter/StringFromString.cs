@@ -1,4 +1,6 @@
-namespace GenericConverter.Internal
+using Microsoft.Xrm.Sdk.Metadata;
+
+namespace GenericConverter
 {
     public class StringFromString : ConvertFromString
     {
@@ -14,7 +16,7 @@ namespace GenericConverter.Internal
             //}
         }
 
-        public override bool AmIResponsible => OutputType.Name == "String";
+        public override bool AmIResponsible => OutputType != null && OutputType.Name == "String" || OutputAttributeTypeCode.Equals(AttributeTypeCode.String);
 
         protected override object InnerOutput(string input)
         {

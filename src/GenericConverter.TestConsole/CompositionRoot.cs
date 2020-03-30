@@ -1,6 +1,4 @@
-﻿using GenericConverter.Internal;
-
-namespace GenericConverter
+﻿namespace GenericConverter.TestConsole
 {
     public class CompositionRoot
     {
