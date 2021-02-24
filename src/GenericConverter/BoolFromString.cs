@@ -3,6 +3,7 @@ using Microsoft.Xrm.Sdk.Metadata;
 
 namespace GenericConverter
 {
+    // ReSharper disable once UnusedType.Global
     public class BoolFromString : ConvertFromString
     {
         /// <summary>
@@ -27,28 +28,26 @@ namespace GenericConverter
                 return null;
             }
 
-            var b = false;
-
-            // ReSharper disable once SwitchStatementMissingSomeCases
-            switch (input.ToUpper())
+            return input.ToUpper() switch
             {
-                case "0":
-                case "F":
-                case "FALSE":
-                case "NO":
-                    // ReSharper disable once RedundantAssignment
-                    b = false;
-                    break;
-                case "1":
-                case "T":
-                case "TRUE":
-                case "YES":
-                    // ReSharper disable once RedundantAssignment
-                    b = true;
-                    break;
-            }
-
-            return b;
+                "0" =>
+                    false,
+                "F" =>
+                    false,
+                "FALSE" =>
+                    false,
+                "NO" =>
+                    false,
+                "1" =>
+                    true,
+                "T" =>
+                    true,
+                "TRUE" =>
+                    true,
+                "YES" =>
+                    true,
+                _ => false
+            };
         }
     }
 }

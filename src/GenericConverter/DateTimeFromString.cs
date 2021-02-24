@@ -4,6 +4,7 @@ using Microsoft.Xrm.Sdk.Metadata;
 
 namespace GenericConverter
 {
+    // ReSharper disable once UnusedType.Global
     public class DateTimeFromString : ConvertFromString
     {
         /// <summary>
@@ -19,7 +20,7 @@ namespace GenericConverter
             }
         }
 
-        public override bool AmIResponsible => OutputType != null && OutputType.Name == "DateTime"|| OutputAttributeTypeCode.Equals(AttributeTypeCode.DateTime);
+        public override bool AmIResponsible => OutputType != null && OutputType.Name == "DateTime" || OutputAttributeTypeCode.Equals(AttributeTypeCode.DateTime);
 
         protected override object InnerOutput(string input)
         {

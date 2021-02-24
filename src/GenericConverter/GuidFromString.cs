@@ -3,6 +3,7 @@ using Microsoft.Xrm.Sdk.Metadata;
 
 namespace GenericConverter
 {
+    // ReSharper disable once UnusedType.Global
     public class GuidFromString : ConvertFromString
     {
         /// <summary>
@@ -18,7 +19,7 @@ namespace GenericConverter
             }
         }
 
-        public override bool AmIResponsible =>OutputType != null &&  OutputType.Name == "Guid"|| OutputAttributeTypeCode.Equals(AttributeTypeCode.Uniqueidentifier);
+        public override bool AmIResponsible => OutputType != null && OutputType.Name == "Guid" || OutputAttributeTypeCode.Equals(AttributeTypeCode.Uniqueidentifier);
 
         protected override object InnerOutput(string input)
         {

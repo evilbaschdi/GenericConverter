@@ -2,6 +2,7 @@ using Microsoft.Xrm.Sdk.Metadata;
 
 namespace GenericConverter
 {
+    // ReSharper disable once UnusedType.Global
     public class StringFromString : ConvertFromString
     {
         /// <summary>

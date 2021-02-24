@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Xrm.Sdk.Metadata;
 
+// ReSharper disable UnusedMemberInSuper.Global
 namespace GenericConverter
 {
     /// <summary>

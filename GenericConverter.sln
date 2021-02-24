@@ -7,9 +7,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7EFED4E8-50D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericConverter", "src\GenericConverter\GenericConverter.csproj", "{0389D29F-D484-44B9-A599-86516B91A8F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericConverter.Tests", "src\GenericConverter.Tests\GenericConverter.Tests.csproj", "{8D0B95F2-D089-4AB5-8231-9FD1AE8E5E0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericConverter.Tests", "src\GenericConverter.Tests\GenericConverter.Tests.csproj", "{8D0B95F2-D089-4AB5-8231-9FD1AE8E5E0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericConverter.TestConsole", "src\GenericConverter.TestConsole\GenericConverter.TestConsole.csproj", "{5C06A652-425F-4EA5-98FA-FC42A9D42223}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericConverter.TestConsole", "src\GenericConverter.TestConsole\GenericConverter.TestConsole.csproj", "{5C06A652-425F-4EA5-98FA-FC42A9D42223}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BC5240D9-F68B-42A5-BD40-B931BBFA069F}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

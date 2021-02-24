@@ -3,6 +3,7 @@ using Microsoft.Xrm.Sdk.Metadata;
 
 namespace GenericConverter
 {
+    // ReSharper disable once UnusedType.Global
     public class Int32FromString : ConvertFromString
     {
         /// <summary>
