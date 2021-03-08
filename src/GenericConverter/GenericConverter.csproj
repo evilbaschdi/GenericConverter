@@ -21,7 +21,7 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Microsoft.Powerplatform.Cds.Client" Version="0.3.10-Alpha" />
+        <PackageReference Include="Microsoft.PowerPlatform.Dataverse.Client" Version="0.4.3" />
       </ItemGroup>
     </Otherwise>
   </Choose>
