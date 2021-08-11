@@ -20,11 +20,11 @@ namespace GenericConverter
             }
         }
 
-        public override bool AmIResponsible => OutputType != null && OutputType.Name == "DateTime" || OutputAttributeTypeCode.Equals(AttributeTypeCode.DateTime);
+        public override bool AmIResponsible => OutputType is { Name: "DateTime" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.DateTime);
 
         protected override object InnerOutput(string input)
         {
-            return input == null ? (object) null : DateTime.ParseExact(input, "yyyyMMddHHmmss", CultureInfo.InvariantCulture);
+            return input == null ? null : DateTime.ParseExact(input, "yyyyMMddHHmmss", CultureInfo.InvariantCulture);
         }
     }
 }

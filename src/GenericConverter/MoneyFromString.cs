@@ -20,7 +20,7 @@ namespace GenericConverter
             }
         }
 
-        public override bool AmIResponsible => OutputType != null && OutputType.Name == "Money" || OutputAttributeTypeCode.Equals(AttributeTypeCode.Money);
+        public override bool AmIResponsible => OutputType is { Name: "Money" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.Money);
 
         protected override object InnerOutput(string input)
         {

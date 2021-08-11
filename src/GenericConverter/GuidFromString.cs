@@ -19,11 +19,11 @@ namespace GenericConverter
             }
         }
 
-        public override bool AmIResponsible => OutputType != null && OutputType.Name == "Guid" || OutputAttributeTypeCode.Equals(AttributeTypeCode.Uniqueidentifier);
+        public override bool AmIResponsible => OutputType is { Name: "Guid" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.Uniqueidentifier);
 
         protected override object InnerOutput(string input)
         {
-            return input == null ? (object) null : Guid.ParseExact(input, "D");
+            return input == null ? null : Guid.ParseExact(input, "D");
         }
     }
 }

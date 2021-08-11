@@ -19,11 +19,11 @@ namespace GenericConverter
             }
         }
 
-        public override bool AmIResponsible => OutputType != null && OutputType.Name == "Decimal" || OutputAttributeTypeCode.Equals(AttributeTypeCode.Decimal);
+        public override bool AmIResponsible => OutputType is { Name: "Decimal" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.Decimal);
 
         protected override object InnerOutput(string input)
         {
-            return input == null ? (object) null : Convert.ToDecimal(input);
+            return input == null ? null : Convert.ToDecimal(input);
         }
     }
 }

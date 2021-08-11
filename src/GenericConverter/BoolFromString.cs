@@ -19,7 +19,7 @@ namespace GenericConverter
             }
         }
 
-        public override bool AmIResponsible => OutputType != null && OutputType.Name == "Boolean" || OutputAttributeTypeCode.Equals(AttributeTypeCode.Boolean);
+        public override bool AmIResponsible => OutputType is { Name: "Boolean" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.Boolean);
 
         protected override object InnerOutput(string input)
         {

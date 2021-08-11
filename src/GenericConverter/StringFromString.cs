@@ -17,7 +17,7 @@ namespace GenericConverter
             //}
         }
 
-        public override bool AmIResponsible => OutputType != null && OutputType.Name == "String" || OutputAttributeTypeCode.Equals(AttributeTypeCode.String);
+        public override bool AmIResponsible => OutputType is { Name: "String" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.String);
 
         protected override object InnerOutput(string input)
         {

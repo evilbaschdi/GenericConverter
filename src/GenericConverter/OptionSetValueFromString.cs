@@ -20,7 +20,7 @@ namespace GenericConverter
             }
         }
 
-        public override bool AmIResponsible => OutputType != null && OutputType.Name == "OptionSetValue" || OutputAttributeTypeCode.Equals(AttributeTypeCode.Picklist);
+        public override bool AmIResponsible => OutputType is { Name: "OptionSetValue" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.Picklist);
 
         protected override object InnerOutput(string input)
         {

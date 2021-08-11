@@ -19,11 +19,11 @@ namespace GenericConverter
             }
         }
 
-        public override bool AmIResponsible => OutputType != null && OutputType.Name == "Double" || OutputAttributeTypeCode.Equals(AttributeTypeCode.Double);
+        public override bool AmIResponsible => OutputType is { Name: "Double" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.Double);
 
         protected override object InnerOutput(string input)
         {
-            return input == null ? (object) null : Convert.ToDouble(input);
+            return input == null ? null : Convert.ToDouble(input);
         }
     }
 }

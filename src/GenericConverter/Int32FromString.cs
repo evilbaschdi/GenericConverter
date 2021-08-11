@@ -19,11 +19,11 @@ namespace GenericConverter
             }
         }
 
-        public override bool AmIResponsible => OutputType != null && OutputType.Name == "Int32" || OutputAttributeTypeCode.Equals(AttributeTypeCode.Integer);
+        public override bool AmIResponsible => OutputType is { Name: "Int32" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.Integer);
 
         protected override object InnerOutput(string input)
         {
-            return input == null ? (object) null : Convert.ToInt32(input);
+            return input == null ? null : Convert.ToInt32(input);
         }
     }
 }

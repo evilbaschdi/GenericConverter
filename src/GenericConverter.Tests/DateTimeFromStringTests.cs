@@ -1,11 +1,8 @@
-using GenericConverter;
-using NSubstitute;
-using System;
-using Xunit;
 using System.Linq;
 using AutoFixture.Idioms;
 using EvilBaschdi.Testing;
 using FluentAssertions;
+using Xunit;
 
 namespace GenericConverter.Tests
 {
@@ -28,7 +25,5 @@ namespace GenericConverter.Tests
         {
             assertion.Verify(typeof(DateTimeFromString).GetMethods().Where(method => !method.IsAbstract));
         }
-
-
     }
 }
