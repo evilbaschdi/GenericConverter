@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EvilBaschdi.Testing" Version="2021.10.3.2147-develop" />
+    <PackageReference Include="EvilBaschdi.Testing" Version="2021.10.11.1624-develop" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="Microsoft.CodeCoverage" Version="16.11.0" />
     <PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="16.11.0" />
