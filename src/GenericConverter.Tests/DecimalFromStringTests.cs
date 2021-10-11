@@ -1,6 +1,3 @@
-using GenericConverter;
-using NSubstitute;
-using System;
 using Xunit;
 using System.Linq;
 using AutoFixture.Idioms;
