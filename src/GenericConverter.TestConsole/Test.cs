@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Xrm.Sdk.Metadata;
+﻿using Microsoft.Xrm.Sdk.Metadata;
 
 namespace GenericConverter.TestConsole
 {

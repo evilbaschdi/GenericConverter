@@ -1,13 +1,10 @@
-﻿using System;
-
-namespace GenericConverter.TestConsole
+﻿namespace GenericConverter.TestConsole
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
-            var compositionRoot = new CompositionRoot();
-            compositionRoot.Run();
+            CompositionRoot.Run();
             Console.ReadLine();
         }
     }

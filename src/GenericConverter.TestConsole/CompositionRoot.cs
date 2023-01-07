@@ -2,7 +2,7 @@
 {
     public class CompositionRoot
     {
-        public void Run()
+        public static void Run()
         {
             IConvertFromString defaultConverter = new StringFromString(null);
             IConvertFromString optionSetValue = new OptionSetValueFromString(defaultConverter);
