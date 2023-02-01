@@ -14,7 +14,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NETCore.Platforms" Version="7.0.0" />
-		<PackageReference Include="System.Security.Cryptography.Xml" Version="7.0.0" />
+		<PackageReference Include="System.Security.Cryptography.Xml" Version="7.0.1" />
 		<PackageReference Include="System.Text.Json" Version="7.0.1" />
 		<PackageReference Include="Microsoft.SourceLink.AzureRepos.Git" Version="1.1.1">
 		  <PrivateAssets>all</PrivateAssets>
