@@ -1,7 +1,6 @@
-﻿namespace GenericConverter.TestConsole
+﻿namespace GenericConverter.TestConsole;
+
+public interface ITest
 {
-    public interface ITest
-    {
-        void Run();
-    }
+    void Run();
 }

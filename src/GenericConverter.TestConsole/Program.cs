@@ -1,11 +1,10 @@
-﻿namespace GenericConverter.TestConsole
+﻿namespace GenericConverter.TestConsole;
+
+public class Program
 {
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            CompositionRoot.Run();
-            Console.ReadLine();
-        }
+        CompositionRoot.Run();
+        Console.ReadLine();
     }
 }
