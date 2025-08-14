@@ -12,10 +12,7 @@ public class BoolFromString : ConvertFromString
     public BoolFromString(IConvertFromString convertFromString)
         : base(convertFromString)
     {
-        if (convertFromString == null)
-        {
-            throw new ArgumentNullException(nameof(convertFromString));
-        }
+        ArgumentNullException.ThrowIfNull(convertFromString);
     }
 
     public override bool AmIResponsible => OutputType is { Name: "Boolean" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.Boolean);

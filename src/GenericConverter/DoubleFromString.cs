@@ -12,16 +12,10 @@ public class DoubleFromString : ConvertFromString
     public DoubleFromString(IConvertFromString convertFromString)
         : base(convertFromString)
     {
-        if (convertFromString == null)
-        {
-            throw new ArgumentNullException(nameof(convertFromString));
-        }
+        ArgumentNullException.ThrowIfNull(convertFromString);
     }
 
     public override bool AmIResponsible => OutputType is { Name: "Double" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.Double);
 
-    protected override object InnerOutput(string input)
-    {
-        return input == null ? null : Convert.ToDouble(input);
-    }
+    protected override object InnerOutput(string input) => input == null ? null : Convert.ToDouble(input);
 }

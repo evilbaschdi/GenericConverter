@@ -13,16 +13,10 @@ public class DateTimeFromString : ConvertFromString
     public DateTimeFromString(IConvertFromString convertFromString)
         : base(convertFromString)
     {
-        if (convertFromString == null)
-        {
-            throw new ArgumentNullException(nameof(convertFromString));
-        }
+        ArgumentNullException.ThrowIfNull(convertFromString);
     }
 
     public override bool AmIResponsible => OutputType is { Name: "DateTime" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.DateTime);
 
-    protected override object InnerOutput(string input)
-    {
-        return input == null ? null : DateTime.ParseExact(input, "yyyyMMddHHmmss", CultureInfo.InvariantCulture);
-    }
+    protected override object InnerOutput(string input) => input == null ? null : DateTime.ParseExact(input, "yyyyMMddHHmmss", CultureInfo.InvariantCulture);
 }

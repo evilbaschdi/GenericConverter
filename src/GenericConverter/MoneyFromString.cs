@@ -13,16 +13,10 @@ public class MoneyFromString : ConvertFromString
     public MoneyFromString(IConvertFromString convertFromString)
         : base(convertFromString)
     {
-        if (convertFromString == null)
-        {
-            throw new ArgumentNullException(nameof(convertFromString));
-        }
+        ArgumentNullException.ThrowIfNull(convertFromString);
     }
 
     public override bool AmIResponsible => OutputType is { Name: "Money" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.Money);
 
-    protected override object InnerOutput(string input)
-    {
-        return input == null ? null : new Money(Convert.ToDecimal(input));
-    }
+    protected override object InnerOutput(string input) => input == null ? null : new Money(Convert.ToDecimal(input));
 }

@@ -19,8 +19,5 @@ public class StringFromString : ConvertFromString
 
     public override bool AmIResponsible => OutputType is { Name: "String" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.String);
 
-    protected override object InnerOutput(string input)
-    {
-        return input;
-    }
+    protected override object InnerOutput(string input) => input;
 }

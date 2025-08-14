@@ -2,6 +2,4 @@
 
 namespace GenericConverter.TestConsole;
 
-public interface IOptionSetValue : IValue<OptionSetValue>
-{
-}
+public interface IOptionSetValue : IValue<OptionSetValue>;

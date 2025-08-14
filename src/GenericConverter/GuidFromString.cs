@@ -12,16 +12,10 @@ public class GuidFromString : ConvertFromString
     public GuidFromString(IConvertFromString convertFromString)
         : base(convertFromString)
     {
-        if (convertFromString == null)
-        {
-            throw new ArgumentNullException(nameof(convertFromString));
-        }
+        ArgumentNullException.ThrowIfNull(convertFromString);
     }
 
     public override bool AmIResponsible => OutputType is { Name: "Guid" } || OutputAttributeTypeCode.Equals(AttributeTypeCode.Uniqueidentifier);
 
-    protected override object InnerOutput(string input)
-    {
-        return input == null ? null : Guid.ParseExact(input, "D");
-    }
+    protected override object InnerOutput(string input) => input == null ? null : Guid.ParseExact(input, "D");
 }
